@@ -56,7 +56,7 @@ int calculate_game(Game&& game) {
     game_result += frame_result;
     if (frame_cnt > 0) {
       game_result += calculate_spare(last_spare, frame);
-      game_result += calculate_strike(strikes_rolls, frame, frame_cnt);
+      game_result += calculate_strike(strikes_rolls, frame, is_last_frame(frame_cnt));
     }
     last_spare = spare;
     strikes_rolls += strike == true ? 2 : 0;
